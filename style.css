@@ -1,0 +1,289 @@
+/* Main styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+input, textarea {
+  margin-top: 8px;
+  padding: 12px;
+  font-size: 1.1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #4CAF50;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.resume-preview {
+  margin-top: 40px;
+  padding: 35px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#resumeContent {
+  margin-top: 15px;
+  font-family: 'Georgia', serif;
+  color: #444;
+}
+
+#resumeContent h3 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #4CAF50;
+  padding-bottom: 8px;
+}
+
+#resumeContent h4 {
+  font-size: 1.5em;
+  color: #444;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+#resumeContent p {
+  line-height: 1.8;
+  font-size: 1.1em;
+  color: #555;
+}
+
+#resumeContent ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+#resumeContent ul li {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+#resumeContent ul li::before {
+  content: '•';
+  color: #4CAF50;
+  font-size: 1.5em;
+  margin-right: 8px;
+}
+
+#resumeContent .section {
+  margin-bottom: 30px;
+}
+
+#resumeContent .section:last-child {
+  margin-bottom: 0;
+}
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.resume-header .name {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.5em;
+  color: #333;
+  font-weight: 700;
+}
+
+.resume-header .contact {
+  text-align: right;
+  font-size: 1.1em;
+  color: #777;
+}
+
+.resume-header .contact a {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.resume-header .contact a:hover {
+  color: #333;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #4CAF50;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #333;
+}
+
+/* Adjust layout for print */
+@media print {
+  #resumeForm, #downloadButton {
+    display: none;
+  }
+
+  .resume-preview {
+    border: none;
+    box-shadow: none;
+    background-color: white;
+    padding: 25px;
+  }
+
+  #resumeContent {
+    font-size: 1em;
+    color: #333;
+  }
+
+  #resumeContent h3 {
+    font-size: 2em;
+  }
+
+  #resumeContent h4 {
+    font-size: 1.4em;
+  }
+
+  #resumeContent p {
+    font-size: 1.1em;
+  }
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .resume-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .resume-header .name {
+    font-size: 2.2em;
+  }
+
+  .resume-header .contact {
+    font-size: 1em;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .resume-preview {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  input, textarea {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  .resume-header .name {
+    font-size: 2em;
+  }
+
+  .resume-preview {
+    padding: 15px;
+  }
+}
